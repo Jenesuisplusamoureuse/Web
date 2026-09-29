@@ -3,7 +3,7 @@
     src: url("Font/terminal-grotesque-webfont.woff2") format("woff2");
 }
 
-body {
+h1 {
     font-family: "terminalGrotesque";
     font-size: 50px;
 }
