@@ -1,20 +1,19 @@
-fetch("optionMenu.html")
-    .then(response => response.text())
-    .then(menu => {
-        document.getElementById("menu").innerHTML = menu;
+const openOption = document.getElementById("open-option");
+const menu = document.getElementById("menu");
 
-        const openOption = document.getElementById("open-option");
-        const closeOption = document.getElementById("close-option");
-        const overlay = document.getElementById("overlay");
+openOption.addEventListener("click", () => {
+    fetch("optionMenu.html")
+        .then(response => response.text())
+        .then(menuHTML => {
+            menu.innerHTML = menuHTML;
 
-        openOption.addEventListener("click", () => {
-            overlay.showModal();
+            const closeOption = document.getElementById("close-option");
+
+            closeOption.addEventListener("click", () => {
+                menu.innerHTML = "";
+            });
+        })
+        .catch(error => {
+            console.error("Erreur lors du chargement du menu :", error);
         });
-
-        closeOption.addEventListener("click", () => {
-            overlay.close();
-        });
-    })
-    .catch(error => {
-        console.error("Erreur lors du chargement du menu :", error);
-    });
+});
