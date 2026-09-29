@@ -11,11 +11,6 @@ openOption.addEventListener("click", () => {
                 const sideMenu = document.getElementById("side-menu");
                 const closeOption = document.getElementById("close-option");
 
-                // Petite pause pour permettre l'animation
-                setTimeout(() => {
-                    sideMenu.classList.add("active");
-                }, 10);
-
                 closeOption.addEventListener("click", () => {
                     sideMenu.classList.remove("active");
 
